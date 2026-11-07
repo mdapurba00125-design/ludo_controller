@@ -1,2 +1,1 @@
-constants WebSocket = require('ws'); const wss = new WebSocket.Server({ port: process.env.PORT || 8080 });
-wss.on('connection', (ws) => { console.log('Client connected'); ws.on('message', (message) => { wss.clients.forEach((client) => { if (client.readyState === WebSocket.OPEN) client.send(message); }); }); });
+const WebSocket = require('ws');
